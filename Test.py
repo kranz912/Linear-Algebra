@@ -20,3 +20,6 @@ assert vector.add_multiple([a,b])== [9,10]
 
 ## test scalar_multiply
 assert  vector.scalar_multiply(10,a) == [30,50]
+
+## test mean
+assert vector.mean([a,b,a,b,b,b]) ==[5.0,5.0]
