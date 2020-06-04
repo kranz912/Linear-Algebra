@@ -1,4 +1,5 @@
 from functools import reduce
+from math import sqrt
 class Vectors(object):
     def __init__(self):
         pass
@@ -18,3 +19,15 @@ class Vectors(object):
     def mean(self,vectors):
         n = len(vectors)
         return self.scalar_multiply(1/n, self.add_multiple(vectors))
+
+    def dot(self,a,b):
+        return sum(a_i*b_i for a_i, b_i in zip(a,b))
+
+    def sum_of_squares(self, a):
+        return self.dot(a,a)
+
+    def magnitude(self,a):
+        return sqrt(self.sum_of_squares(a))
+
+    def distance(self,a,b):
+        return self.magnitude(self.subtract(a,b))
